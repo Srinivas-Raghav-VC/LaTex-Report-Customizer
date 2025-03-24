@@ -10,8 +10,71 @@ The **LaTeX Report Customizer** is a desktop application that allows users to ge
 - **TEX Export**: Option to export modified TEX files for further editing.
 - **Preview Support**: View how selected components will appear before generating final output.
 
-## Technical Implementation
+## Dependencies
+### Python Dependencies
+- PyQt5
+- PyLaTeX
 
+### System Dependencies
+#### LaTeX Distribution
+- **Windows**: MiKTeX or TeX Live
+- **macOS**: MacTeX
+- **Linux**: TeX Live
+
+#### PDF Viewer
+- Any modern PDF reader (for viewing generated reports)
+
+## Installation Instructions
+### 1. Python Environment Setup
+Ensure you have Python 3.6+ installed and set up a virtual environment if needed.
+
+### 2. LaTeX Distribution Installation
+#### Windows:
+- Download and install **MiKTeX** or **TeX Live**.
+- During installation, select **"Install missing packages automatically"**.
+
+#### macOS:
+- Download and install **MacTeX**.
+
+#### Linux:
+- Install **TeX Live** using the package manager (`sudo apt install texlive-full` or equivalent).
+
+## Running the Application
+### From Source Code
+1. Clone the repository.
+2. Install dependencies using `pip install -r requirements.txt`.
+3. Run the application with `python main.py`.
+
+### Using the Executable (After Packaging)
+1. Download the pre-built executable.
+2. Run the executable file to launch the application.
+
+## Usage Instructions
+1. Launch the application using one of the methods above.
+2. Open a LaTeX file via **File → Open LaTeX File** (or press `Ctrl+O`).
+3. Select components you want to include in the final report.
+4. Generate PDF via **File → Generate PDF** (or press `Ctrl+G`).
+5. The custom **PDF** with only selected components will be created.
+
+## Troubleshooting Common Issues
+### LaTeX Engine Not Found
+- Ensure your LaTeX distribution is properly installed.
+- Make sure LaTeX binaries are in your system **PATH**.
+- Restart the application after installing LaTeX.
+
+### Missing LaTeX Packages
+- If using **MiKTeX**, enable **"Install missing packages on the fly"**.
+- For **TeX Live/MacTeX**, run `tlmgr install <package-name>` for any missing packages.
+
+### PDF Generation Fails
+- Check the application logs for specific LaTeX errors.
+- Ensure the input LaTeX file is valid and compiles independently.
+- Verify you have write permissions in the output directory.
+
+## Building Executable Packages
+- The executable will be available in the **dist** directory after packaging.
+
+## Technical Implementation
 ### Frontend (GUI)
 - Built with **PyQt5** for a responsive and modern user interface.
 - Component organization with checkboxes for easy selection.
@@ -24,20 +87,8 @@ The **LaTeX Report Customizer** is a desktop application that allows users to ge
 - PDF generation through **LaTeX engine integration**.
 - Temporary file handling for processing.
 
-## Requirements
-- Python 3.6+
-- PyQt5
-- LaTeX distribution (**TeXLive, MiKTeX**, etc.)
-- PyLaTeX for LaTeX file manipulation
-
-## Usage Flow
-1. Launch the application.
-2. Open a LaTeX (.tex) file using the **File** menu or keyboard shortcut.
-3. View extracted components in the main interface.
-4. Select desired sections for inclusion.
-5. Generate a custom **PDF** or export a modified **TEX** file.
-6. View the resulting document with only selected components.
-
 ## Future Enhancements
+- Component preview in the selection interface.
 - Drag-and-drop reordering of sections.
-- LaTeX template library integration.
+
+This tool streamlines the process of generating custom reports by allowing users to include only relevant information from comprehensive LaTeX documents, saving time and improving document clarity.
