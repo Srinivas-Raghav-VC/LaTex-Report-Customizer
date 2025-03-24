@@ -45,9 +45,6 @@ Ensure you have Python 3.6+ installed and set up a virtual environment if needed
 2. Install dependencies using `pip install -r requirements.txt`.
 3. Run the application with `python main.py`.
 
-### Using the Executable (After Packaging)
-1. Download the pre-built executable.
-2. Run the executable file to launch the application.
 
 ## Usage Instructions
 1. Launch the application using one of the methods above.
@@ -55,6 +52,7 @@ Ensure you have Python 3.6+ installed and set up a virtual environment if needed
 3. Select components you want to include in the final report.
 4. Generate PDF via **File → Generate PDF** (or press `Ctrl+G`).
 5. The custom **PDF** with only selected components will be created.
+6. For Dark Mode you can use the toggle or (`CtrL+D`)
 
 ## Troubleshooting Common Issues
 ### LaTeX Engine Not Found
